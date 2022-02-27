@@ -5,6 +5,6 @@ WORKDIR /app
 COPY ./app /app
 COPY ./demo-fixtures /demo-fixtures
 
-RUN go build -o fixtures-server
+RUN go build
 
-CMD ["./fixtures-server"]  
+CMD ["./mock-fixtures-server"]  
