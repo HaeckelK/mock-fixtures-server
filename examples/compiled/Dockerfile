@@ -1,5 +1,5 @@
 # Use pre built fixtures server as builder
-FROM docker pull haeckelk/fixtures-server:latest as builder
+FROM haeckelk/fixtures-server:latest as builder
 
 # Copy in own fixtures
 COPY ./fixtures /fixtures
