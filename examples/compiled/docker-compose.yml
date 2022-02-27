@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  fixtures-server:
+    build: .
+    environment:
+      - PORT=$PORT
+    ports:
+      - $LOCAL_PORT:$PORT
+
+  # Your other services that make requests to the fixtures server
+  # app: ...
