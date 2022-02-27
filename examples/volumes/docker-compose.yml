@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  fixtures-server:
+    # Use image directly from Docker Hub
+    image: haeckelk/fixtures-server:latest
+    # Set command to run go modules without binaries
+    command: "go run ."
+    environment:
+      - PORT=$PORT
+    ports:
+      - $LOCAL_PORT:$PORT
+    # Map router.go and /fixtures to local filesystem
+    volumes:
+      - ./router.go:/app/router.go
+      - ./fixtures:/fixtures
+
+  # Your other services that make requests to the fixtures server
+  # app: ...
